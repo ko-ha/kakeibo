@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>家計簿</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="家計簿フロント.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+    </head>
+
+    <body>
+        <div class="checkpage">
+            <div class="cp-top">
+                <h4>SPENDING</h4>
+            </div>
+            <div class="cp-table">
+                
+                <table  border-collapse="collapse" id="table">
+                    <tr class="holder-th">
+                        <th>DATE</th>
+                        <th>CONTENTS</th>
+                        <th>PRICE</th>
+                        <th>NOTE</th>
+                        <th>CATEGORY</th>
+                    </tr>
+                    <tr class="holder-tr"></tr>
+                    
+                </table>
+            </div>
+        </div>
+
+        <script>
+            const url = 'https://script.google.com/macros/s/AKfycbw-xnI-B0prbFKfMsFS1Tn71kgnzqi_NHsIeqwXKHzNAn6Q_JxBblWS/exec'
+
+            axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+            axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
+            var table = document.getElementById('table');
+
+            async function getData() {
+                var { data, status } = await axios.get(url);
+                if (status !==　200) return console.log('failed'); 
+
+                //var td = document.createElement('td');
+                var tr = document.querySelector('.holder-tr')
+               
+
+
+                // for (items of data) {
+                //     for (item in items) {
+                //         var itm = items[item];
+                //         td.innerText = JSON.stringify(itm, null, 2);
+                        
+                //     }
+                // }
+
+                // tr.appendChild(td);
+               
+
+                for (items of data) {   // items = 一行ずつのオブジェクト　プロパティが５つ
+                   for (item in items) {
+                       
+                        var td = document.createElement('td');
+                        td.innerText = `${JSON.stringify(items[item], null, 2)}`;
+                        var datata = tr.appendChild(td);
+                   }
+                   
+                }
+                
+                return datata
+            }
+            getData();
+        </script>
+
+    </body>
+
+    
+
+</html>    
+
+
+<!--
+    ・最初のページに戻るボタン
+    ・続けて記入できるボタンを造る
+    ・月ごと、カテゴリーごとに表示できれば良し
+    ・円グラフ作れたら最高
+-->
