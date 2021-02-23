@@ -4,7 +4,7 @@
 
 /* font-family: 'Amatic SC', cursive; */
 
-body .firstpage {
+.firstpage {
     width: 100vw;
     height: 95vh;
     display: flex;
@@ -14,7 +14,7 @@ body .firstpage {
     background-color: rgb(233, 223, 210);
 }
 
-body .firstpage .fp-middle {
+.firstpage .fp-middle {
     width: 50%;
     height: 50%;
     display: flex;
@@ -24,25 +24,25 @@ body .firstpage .fp-middle {
     background-color: rgba(89, 128, 129, 0.8);
 }
 
-body .firstpage .fp-middle .fp-txt {
+.firstpage .fp-middle .fp-txt {
     color: rgb(233, 223, 210);
     font-family: 'Amatic SC', cursive; 
     font-size: 5rem;
     padding: 1rem 1rem 1.5rem 1rem;
 }
 
-body .firstpage .fp-middle .fp-txt:hover {
+.firstpage .fp-middle .fp-txt:hover {
     cursor: default;
 }
 
-body .firstpage .fp-middle #fp-form {
+.firstpage .fp-middle #fp-form {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-body .firstpage .fp-middle #fp-form  .fp-btn {
+.firstpage .fp-middle #fp-form  .fp-btn {
     color: rgb(233, 223, 210);
     padding: 5px 0;
     background-color: transparent;
@@ -52,23 +52,23 @@ body .firstpage .fp-middle #fp-form  .fp-btn {
     border: none;
 }
 
-body .firstpage .fp-middle #fp-form .check .fp-btn {
+.firstpage .fp-middle #fp-form .check .fp-btn {
     padding: 5px 1.5rem;
     margin-left: 5px;
 }
 
-body .firstpage .fp-middle #fp-form .record .fp-btn {
+.firstpage .fp-middle #fp-form .record .fp-btn {
     padding: 5px 1.26rem;
     margin-right: 5px;
 }
 
-body .firstpage .fp-middle #fp-form .fp-btn:hover {
+.firstpage .fp-middle #fp-form .fp-btn:hover {
     background-color: rgba(233, 223, 210, 0.9);
     color: rgba(89, 128, 129, 1);
     cursor: pointer;
 }
 
-body .fp-bottom {
+.fp-bottom {
    height: 5vh;
    width: 100vw;
    background-color: rgb(233, 223, 210);
@@ -82,7 +82,7 @@ body .fp-bottom {
 
 /* checkpage -------------------------------------------------------------------*/
 
-body .checkpage {
+.checkpage {
     width: 100vw;
     height: 100vh;
     background-color: rgb(233, 223, 210);
@@ -92,7 +92,7 @@ body .checkpage {
     align-items: center;
 }
 
-body .checkpage .cp-top {
+.checkpage .cp-top {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -101,20 +101,20 @@ body .checkpage .cp-top {
     padding: 3% 0;
 }
 
-body .checkpage .cp-top h4 {
+.checkpage .cp-top h4 {
     color: rgba(89, 128, 129, 0.8);
     font-size: 3rem;
     font-family: 'Amatic SC', cursive;
 }
 
-body .checkpage .cp-table {
+.checkpage .cp-table {
     width: 72%;
     height: 70%; 
     max-width: 72%;
     max-height: 70%;
 }
 
-body .checkpage .cp-table table {
+.checkpage .cp-table table {
     max-width: 100%;
     max-height: 100%;
     display: flex;
@@ -123,11 +123,11 @@ body .checkpage .cp-table table {
     align-items: center;
 }
 
-body .checkpage .cp-table table td, th {
+.checkpage .cp-table table td, th {
     border: 1px solid rgba(89, 128, 129, 0.8);
 }
 
-body .checkpage .cp-table table tr {
+.checkpage .cp-table table tr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap-reverse;
@@ -136,7 +136,7 @@ body .checkpage .cp-table table tr {
     
 }
 
-body .checkpage .cp-table table .holder-th {
+.checkpage .cp-table table .holder-th {
     z-index: 10;
     text-align: center;
     background-color: rgba(89, 128, 129, 1);
@@ -144,21 +144,21 @@ body .checkpage .cp-table table .holder-th {
     
 }
 
-body .checkpage .cp-table table .holder-th th {
+.checkpage .cp-table table .holder-th th {
     height: 2rem;
     font-family: 'Amatic SC', cursive;
     font-size: 1.85rem;
     color: rgb(233, 223, 210);
 }
 
-body .checkpage .cp-table table tr th, td {
+.checkpage .cp-table table tr th, td {
     max-width: 196.52px;
     width: 193.15px;
     overflow: hidden;
     height: 19px;
 }
 
-body .checkpage .cp-table table .holder-tr {
+.checkpage .cp-table table .holder-tr {
     position: absolute;
     max-height: 510px;
     overflow-y: scroll;
@@ -182,14 +182,14 @@ body {
     box-sizing: border-box;
 }
 
-body .rp-top {
+.rp-top {
     height: 15%;
     max-height: 15%;
     width: 100%;
     text-align: center;
 }
 
-body .rp-top h3 {
+.rp-top h3 {
     color: rgba(89, 128, 129, 0.8);
     border: rgba(89, 128, 129, 0.8);
     padding: 2.5rem 0;
@@ -198,16 +198,15 @@ body .rp-top h3 {
     letter-spacing: 0.5rem;
 }
 
-body .rp-middle {
+.rp-middle {
     height: 70%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-body .rp-middle .middle-container {
+.rp-middle .middle-container {
     background-color: rgb(233, 223, 210);
     height: 100%;
     width: 75%;
@@ -217,7 +216,7 @@ body .rp-middle .middle-container {
     align-items: center;
 }
 
-body .rp-middle .middle-container .spd-title {
+.rp-middle .middle-container .spd-title {
     background-color: rgba(89, 128, 129, 0.8);
     display: flex;
     flex-direction: row;
@@ -227,34 +226,34 @@ body .rp-middle .middle-container .spd-title {
     width: 100%;
 }
 
-body .rp-middle .middle-container .spd-title h4 {
+.rp-middle .middle-container .spd-title h4 {
     font-family: 'Amatic SC', cursive;
     text-align: center;
     font-size: 2.2rem;
     color: rgb(233, 223, 210);
 }
 
-body .rp-middle .middle-container .spd-title .title-date {
+.rp-middle .middle-container .spd-title .title-date {
     width: 15%;
 } 
 
-body .rp-middle .middle-container .spd-title .title-category {
+.rp-middle .middle-container .spd-title .title-category {
     width: 10%;
 }
 
-body .rp-middle .middle-container .spd-title .title-contents {
+.rp-middle .middle-container .spd-title .title-contents {
     width: 18%;
 }
 
-body .rp-middle .middle-container .spd-title .title-price {
+.rp-middle .middle-container .spd-title .title-price {
     width: 12%;
 }
 
-body .rp-middle .middle-container .spd-title .title-memo {
+.rp-middle .middle-container .spd-title .title-memo {
     width: 45%;
 }
 
-body .rp-middle .middle-container .spd-data {
+.rp-middle .middle-container .spd-data {
     width: 100%;
     height: 92%;
     max-height: 100%;
@@ -262,7 +261,7 @@ body .rp-middle .middle-container .spd-data {
     border-bottom: 2px solid rgba(89, 128, 129, 0.8);
 }
 
-body .rp-middle .middle-container .spd-data .data-container {
+.rp-middle .middle-container .spd-data .data-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -271,36 +270,36 @@ body .rp-middle .middle-container .spd-data .data-container {
     align-items: flex-start;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .container {
+.rp-middle .middle-container .spd-data .data-container .container {
     height: 100%;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .container p {
+.rp-middle .middle-container .spd-data .data-container .container p {
     color: rgb(60, 60, 65);
     font-size: 1.2rem;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .date-container {
+.rp-middle .middle-container .spd-data .data-container .date-container {
     width: 15.3%;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .date-container .date-holder {
+.rp-middle .middle-container .spd-data .data-container .date-container .date-holder {
     height: 8%;
     width: 100%;
     text-align: center;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .date-container p {
+.rp-middle .middle-container .spd-data .data-container .date-container p {
     height: 100%;
     border-left: 2px solid rgba(89, 128, 129, 0.8);
     border-bottom: 2px solid rgba(89, 128, 129, 0.8);
     padding: 11px 0 11px 0;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .category-container {
+.rp-middle .middle-container .spd-data .data-container .category-container {
     width: 10.2%;
     display: flex;
     flex-direction: column-reverse;
@@ -308,20 +307,20 @@ body .rp-middle .middle-container .spd-data .data-container .category-container 
     text-align: center;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .category-container .category-holder {
+.rp-middle .middle-container .spd-data .data-container .category-container .category-holder {
     height: 8%;
     width: 100%;
     text-align: center;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .category-container p {
+.rp-middle .middle-container .spd-data .data-container .category-container p {
     height: 100%;
     border-left: 2px solid rgba(89, 128, 129, 0.8);
     border-bottom: 2px solid rgba(89, 128, 129, 0.8);
     padding: 11px 0 11px 0;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .contents-container {
+.rp-middle .middle-container .spd-data .data-container .contents-container {
     width: 18.3%;
     display: flex;
     flex-direction: column-reverse;
@@ -329,12 +328,12 @@ body .rp-middle .middle-container .spd-data .data-container .contents-container 
     text-align: center;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .contents-container .contents-holder {
+.rp-middle .middle-container .spd-data .data-container .contents-container .contents-holder {
     height: 8%;
     width: 100%;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .contents-container p {
+.rp-middle .middle-container .spd-data .data-container .contents-container p {
     height: 100%;
     width: 100%;
     overflow-y: auto;
@@ -343,57 +342,57 @@ body .rp-middle .middle-container .spd-data .data-container .contents-container 
     padding: 11px 0 11px 0;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .contents-container p::-webkit-scrollbar {
+.rp-middle .middle-container .spd-data .data-container .contents-container p::-webkit-scrollbar {
     display: none;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .price-container {
+.rp-middle .middle-container .spd-data .data-container .price-container {
     width: 12%;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .price-container .price-holder {
+.rp-middle .middle-container .spd-data .data-container .price-container .price-holder {
     height: 8%;
     width: 100%;
     text-align: center;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .price-container p {
+.rp-middle .middle-container .spd-data .data-container .price-container p {
     height: 100%;
     border-left: 2px solid rgba(89, 128, 129, 0.8);
     border-bottom: 2px solid rgba(89, 128, 129, 0.8);
     padding: 11px 0 11px 0;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .memo-container {
+.rp-middle .middle-container .spd-data .data-container .memo-container {
     width: 44%;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .memo-container .memo-holder {
+.rp-middle .middle-container .spd-data .data-container .memo-container .memo-holder {
     height: 8%;
     min-height: 8%;
     width: 100%;
     text-align: center;
 }
 
-body .rp-middle .middle-container .spd-data .data-container .memo-container p {
+.rp-middle .middle-container .spd-data .data-container .memo-container p {
     height: 100%;
     border-left: 2px solid rgba(89, 128, 129, 0.8);
     border-bottom: 2px solid rgba(89, 128, 129, 0.8);
     padding: 11px 0 11px 0;
 }
 
-body .rp-bottom {
+.rp-bottom {
     height: 15%;
     width: 100%;
 }
 
-body .rp-bottom .btm-button {
+.rp-bottom .btm-button {
     height: 100%;
     width: 100%;
     display: flex;
@@ -402,7 +401,7 @@ body .rp-bottom .btm-button {
     align-items: center;
 }
 
-body .rp-bottom .btm-button form .rp-btn {
+.rp-bottom .btm-button form .rp-btn {
     background-color: rgba(89, 128, 129, 0.8);
     border: none;
     color: rgb(233, 223, 210);
@@ -411,18 +410,18 @@ body .rp-bottom .btm-button form .rp-btn {
     margin: 0 50px;
 }
 
-body .rp-bottom .btm-button form .rp-btn:hover {
+.rp-bottom .btm-button form .rp-btn:hover {
     background-color: rgb(233, 223, 210);
     color: rgba(89, 128, 129, 0.8);
     cursor: pointer;
     transition: all 0.5s ease;
 }
 
-body .rp-bottom .btm-button form .home-btn {
+.rp-bottom .btm-button form .home-btn {
     padding: 0 20px;
 }
 
-body .rp-bottom .btm-button form  .record-btn {
+.rp-bottom .btm-button form  .record-btn {
     padding: 0 12.52px;
 }
 

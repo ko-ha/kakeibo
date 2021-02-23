@@ -1,133 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>家計簿</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="家計簿フロント.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-        <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
-    </head>
 
-    <body>
-       <div class="rp-top">
-           <h3>SPENDING</h3>
-       </div>
+<head>
+    <meta charset="UTF-8">
+    <title>家計簿</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+</head>
 
-       <div class="rp-middle">
+<body>
+    <div class="rp-top">
+        <h3>SPENDING</h3>
+    </div>
 
-           <div class="middle-container">
-                <div class="spd-title">
-                    <h4 class="title-date">DATE</h4>
-                    <h4 class="title-category">CATEGORY</h4>
-                    <h4 class="title-contents">CONTENTS</h4>
-                    <h4 class="title-price">PRICE</h4>
-                    <h4 class="title-memo">MEMO</h4>
-                </div>
-                <div class="spd-data">
-                    <div class="data-container">
-                        <div class="container date-container"></div>
-                        <div class="container category-container"></div>
-                        <div class="container contents-container"></div>
-                        <div class="container price-container"></div>
-                        <div class="container memo-container"></div>
-                    </div>
-                </div>
-           </div>
-       </div>
+    <div class="rp-middle">
 
-       <div class="rp-bottom">
-           <div class="btm-button">
+        <table style="width: 80%; display: block; height: 100%; overflow-y: scroll">
+            <thead>
+                <tr class="labels">
+                    <th class="title-date">DATE</th>
+                    <th class="title-category">CATEGORY</th>
+                    <th class="title-contents">CONTENTS</h4>
+                    <th class="title-price">PRICE</h4>
+                    <th class="title-memo">MEMO</h4>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="rp-bottom">
+        <div class="btm-button">
             <form method="GET" action="index.html" class="home">
                 <input type="submit" value="HOME" class="rp-btn home-btn">
             </form>
             <form method="GET" action="kakeibo3.html" class="record">
                 <input type="submit" value="RECORD" class="rp-btn record-btn">
             </form>
-           </div>    
-       </div>
+        </div>
+    </div>
 
-        <script>
-            const url = 'https://script.google.com/macros/s/AKfycbw-xnI-B0prbFKfMsFS1Tn71kgnzqi_NHsIeqwXKHzNAn6Q_JxBblWS/exec'
+    <script>
+        const url = 'https://script.google.com/macros/s/AKfycbw-xnI-B0prbFKfMsFS1Tn71kgnzqi_NHsIeqwXKHzNAn6Q_JxBblWS/exec'
 
-            axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
-            axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+        async function getData() {
+            var { data, status } = await axios.get(url);
+            if (status !== 200) return console.log('failed');
+            return data
+        }
 
-            const dataContainer = document.querySelector('.data-container');
+        async function main() {
+            const data = await getData()
+            const table = document.querySelector('tbody')
+            for (item of data) {
+                const {
+                    date,
+                    category,
+                    name,
+                    price,
+                    note
+                } = item
 
-            const dateContainer = document.querySelector('.date-container');
-            const categoryContainer = document.querySelector('.category-container');
-            const contentsContainer = document.querySelector('.contents-container');
-            const priceContainer = document.querySelector('.price-container');
-            const memoContainer = document.querySelector('.memo-container');
-
-            async function getData() {
-
-                var { data, status } = await axios.get(url);
-                if (status !== 200) return console.log('failed'); 
-
-                for (spdData of data) {
-                    var datas = spdData;
-
-                    var { date } = datas;
-                    const dateHolder = document.createElement('div');
-                    dateHolder.classList.add('date-holder');
-                    const dateData = document.createElement('p');
-                    dateData.innerText = formatDate(date);
-                    dateHolder.appendChild(dateData);
-                    dateContainer.appendChild(dateHolder);
-                    
-                    var { category } = datas;
-                    const categoryHolder = document.createElement('div');
-                    categoryHolder.classList.add('category-holder');
-                    const categoryData = document.createElement('p');
-                    categoryData.innerText = category;
-                    categoryHolder.appendChild(categoryData);
-                    categoryContainer.appendChild(categoryHolder);
-
-                    var { name } = datas;
-                    const contentsHolder = document.createElement('div');
-                    contentsHolder.classList.add('contents-holder');
-                    const contentsData = document.createElement('p');
-                    contentsData.innerText = name;
-                    contentsHolder.appendChild(contentsData);
-                    contentsContainer.appendChild(contentsHolder);
-
-                    var { price } = datas;
-                    const priceHolder = document.createElement('div');
-                    priceHolder.classList.add('price-holder');
-                    const priceData = document.createElement('p');
-                    priceData.innerText = price;
-                    priceHolder.appendChild(priceData);
-                    priceContainer.appendChild(priceHolder);
-
-                    var { note } = datas;
-                    const memoHolder = document.createElement('div');
-                    memoHolder.classList.add('memo-holder');
-                    const memoData = document.createElement('p');
-                    memoData.innerText = note;
-                    memoHolder.appendChild(memoData);
-                    memoContainer.appendChild(memoHolder);
-                    
-                    console.log(date);
-                    
-                }
-                
+                const tr = document.createElement('tr')
+                const row = [formatDate(date), category, name, price, note].map(x => createCell(x))
+                tr.append(...row)
+                table.appendChild(tr)
             }
+        }
 
-            getData();
+        function createCell(value) {
+            const cell = document.createElement('td')
+            cell.innerText = value
+            return cell
+        }
 
-            function formatDate(x) {
-               const newDate = x.substring(0, 10);
-               return newDate;
-            }
-            
-        </script>
-    </body>
+        function formatDate(x) {
+            const newDate = x.substring(0, 10);
+            return newDate;
+        }
+
+        main()
+    </script>
+</body>
 
 
-</html>   
+</html>
 
 
 <!--
